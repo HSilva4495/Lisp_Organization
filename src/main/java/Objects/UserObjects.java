@@ -4,7 +4,7 @@ import com.opencsv.bean.CsvBindByPosition;
 
 /**
  * @author Henry Silva Quevedo
- * @since 06/01/2022
+ * @since 06/03/2022
  */
 
 /*
@@ -18,20 +18,20 @@ Insurance Company (string)
 
 public class UserObjects {
 //    private String UserID,FirstName,LastName,InsuranceCompany;
-    @CsvBindByName(column = "User ID", required = true)
-    @CsvBindByPosition(position = 0)
+    @CsvBindByName(column = "User ID")
+//    @CsvBindByPosition(position = 0)
     private String UserID;
-    @CsvBindByName(column = "First Name", required = true)
-    @CsvBindByPosition(position = 1)
+    @CsvBindByName(column = "First Name")
+//    @CsvBindByPosition(position = 1)
     private String FirstName;
-    @CsvBindByName(column = "Last Name", required = true)
-    @CsvBindByPosition(position = 2)
+    @CsvBindByName(column = "Last Name")
+//    @CsvBindByPosition(position = 2)
     private String LastName;
     @CsvBindByName(column =  "Version")
-    @CsvBindByPosition(position = 3)
+//    @CsvBindByPosition(position = 3)
     private int Version;
     @CsvBindByName(column = "Insurance Company")
-    @CsvBindByPosition(position = 4)
+//    @CsvBindByPosition(position = 4)
     private String InsuranceCompany;
 
     //These are the getters and setters of the object

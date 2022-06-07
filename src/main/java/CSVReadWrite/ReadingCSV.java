@@ -1,4 +1,4 @@
-package CSVRead;
+package CSVReadWrite;
 
 import Objects.UserObjects;
 import com.opencsv.bean.CsvToBean;
@@ -23,8 +23,9 @@ public class ReadingCSV {
          */
 
         public List<UserObjects> ReadingToFile() throws FileNotFoundException {
+            String filename = "InitFile";
             //reader
-            FileReader reader = new FileReader("D:\\OneDrive\\OneDrive - Gulf Coast University - FGCU\\OneDrive - Florida Gulf Coast University\\resume\\Avility test\\Availity_Backend\\src\\main\\java");
+            FileReader reader = new FileReader("D:\\OneDrive\\OneDrive - Gulf Coast University - FGCU\\OneDrive - Florida Gulf Coast University\\resume\\Avility test\\Availity_Backend\\src\\main\\java\\"+filename+".csv");
             CsvToBean<UserObjects> FIleToBean = new CsvToBeanBuilder<UserObjects>(reader)
                     .withType(UserObjects.class).withIgnoreLeadingWhiteSpace(true).build();
 
