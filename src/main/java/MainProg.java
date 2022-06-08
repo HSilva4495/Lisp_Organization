@@ -138,7 +138,7 @@ public class MainProg {
             }
         }));
 
-
+///setting the UI
         JPanel panel = new JPanel();
         panel.setBorder(BorderFactory.createEmptyBorder(200,200,100,200));
         panel.setLayout(new GridLayout(0,1));
@@ -163,14 +163,9 @@ public class MainProg {
 
         new MainProg();
 
-//        System.out.println("Thank you for evaluating my program.\n Input an int for executing the program: ");
-//        System.out.println("1. LISP Checker");
-//        System.out.println("2. CSV Organizer");
-//
 //        LISPEXP();
-//
 //        csvEXP();
-//        System.out.println("test");
+
 
 
     }//end main
