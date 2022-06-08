@@ -7,6 +7,7 @@ import Objects.*;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.*;
@@ -16,6 +17,8 @@ import java.util.List;
 public class MainProg {
     public static List<String> CompList = new ArrayList<String>();
     public static Map<String, UserObjects> userHMap = new HashMap<>();
+
+    private String LISPString;
 
     public static void LISPEXP(){
         /**
@@ -98,18 +101,52 @@ public class MainProg {
     }
     public MainProg(){
         JFrame frame = new JFrame();
+    //text filed Classes
+       TextField tfCount = new TextField("UI input Lisp", 50);
+        JLabel LISPLabel = new JLabel("Result:");
+
+
 
         //button classes
-        JButton button = new JButton("CSV Function");
-//        button.addActionListener();
 
-        JLabel label = new JLabel("CSV Generated");
+        //LISP check button added
+        JButton buttonLisp = new JButton("Lisp Check");
+            buttonLisp.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent evt) {
+                    LISPString = tfCount.getText();
+                    LISPLabel.setText("Result:" + BalLISP(LISPString));
+
+                }
+            });
+
+
+        //csvFunction added================================================================
+        JButton button = new JButton("CSV Function");
+        button.setPreferredSize(new Dimension(100,50));
+        JLabel label = new JLabel("CSV ungenerated");
+        label.setPreferredSize(new Dimension(500, 50));
+        button.addActionListener((new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    csvEXP();
+                    label.setText("CSV generated and Sorted");
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        }));
 
 
         JPanel panel = new JPanel();
         panel.setBorder(BorderFactory.createEmptyBorder(200,200,100,200));
         panel.setLayout(new GridLayout(0,1));
         //adding button
+        panel.add(tfCount);//super adds text box
+        panel.add(buttonLisp);
+        panel.add(LISPLabel);
+
         panel.add(button);
         panel.add(label);
 
@@ -137,4 +174,8 @@ public class MainProg {
 
 
     }//end main
+
+
+
+
 }//end allclass
