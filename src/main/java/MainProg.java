@@ -102,7 +102,7 @@ public class MainProg {
     public MainProg(){
         JFrame frame = new JFrame();
     //text filed Classes
-       TextField tfCount = new TextField("UI input Lisp", 50);
+       JTextField tfCount = new JTextField("UI input Lisp", 50);
         JLabel LISPLabel = new JLabel("Result:");
 
 
