@@ -15,7 +15,9 @@ import java.util.List;
 
 
 public class MainProg {
+    //list of all the companies present
     public static List<String> CompList = new ArrayList<String>();
+    //list of the users mapped to the userobjects
     public static Map<String, UserObjects> userHMap = new HashMap<>();
 
     private String LISPString;
@@ -64,6 +66,25 @@ public class MainProg {
                        :collect x()))                  ; store values into x, then return it
                 \s""";
 
+        String nestedLISP1 = "(defun print-list (list)" +
+                "  (dolist (i list)" +
+                "    (format t \"item: ~a~%\" i)))";
+
+        String nestedLisp2 = """
+                (defun read-lines (file)
+                  "Return a list of lines in FILE."
+                  (with-temp-buffer
+                    (insert-file-contents file)
+                    (split-string
+                     (buffer-string) "" t)))
+
+                (mapcar
+                 (lambda (x)
+                   (mapcar
+                    (lambda (y) (string-to-number y))
+                    (split-string x " ")))
+                 (read-lines "blob.txt"))\s""";
+
         System.out.println(BalLISP(LIspStrT1));
         System.out.println(BalLISP(LIspStrF1));
         System.out.println(BalLISP(LIspStrT2));
@@ -84,21 +105,26 @@ public class MainProg {
         List<UserObjects> CustList = CSVParse.ReadingToFile();
         List<UserObjects> FillCList = Sorting.cleanList(CustList);//filter null
 
+        //add all items on the file to the userhashmap aka create a collection out of the values of the map
         CustList.addAll(userHMap.values());
+        // sort by insurance calling back sortcsv()
         CompList = Sorting.SRTByInsurance(CustList,CompList);
 
         //move Cleaned list to a UserHash
+        // Separate enrollees by insurance company
         for(UserObjects user : FillCList){
             Sorting.CompanyToUser(user,userHMap);
         }
-
+// the list organized according to the object
         List<UserObjects> endList = new ArrayList<UserObjects>(userHMap.values());
         Sorting.SortLast(endList);
         System.out.println(endList);
 
-        //writing
+        //writing to each insurance company
         Writing.WNewFile(CompList, endList);
-    }
+    }//end of the csvEXP
+
+
     public MainProg(){
         JFrame frame = new JFrame();
     //text filed Classes

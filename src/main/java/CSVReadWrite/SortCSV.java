@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
  */
 public class SortCSV {
 
-    //Sort By Last and First Name
+    //Sort By Last and First Name from A to Z
     public List<UserObjects> SortLast(List<UserObjects> UserOBJList){
 
         Comparator<UserObjects> byLastN = Comparator.comparing(UserObjects::getLastName).thenComparing(UserObjects::getLastName);
@@ -22,7 +22,7 @@ public class SortCSV {
 
         return UserOBJList;
     }//end Sort
-
+//=====================================================================
     //Separate enrollees by insurance company in its own file.
     public Map<String, UserObjects> CompanyToUser(UserObjects UserOBJList, Map<String, UserObjects> userHashMap) {
         //key to validate the users to the company
@@ -31,7 +31,7 @@ public class SortCSV {
 
         //users object for latest version
         UserObjects UserWLatest = userHashMap.get(key);
-        //if User latest is present and < than reg object then the user is replaced
+        //if User version is present and less than reg object then the user with the lowest version is replaced
         if (UserWLatest != null && UserWLatest.getVersion() < UserOBJList.getVersion()) {
             userHashMap.replace(key, UserOBJList);
         } else {
@@ -39,7 +39,9 @@ public class SortCSV {
         }
         return userHashMap;
     }
+//================================================================================================
 
+    //sort the values by insurance
     public List<String> SRTByInsurance(List<UserObjects> UserOBJList, List<String> compList) {
         for (UserObjects user : UserOBJList)
             if (!(compList.contains(user.getInsuranceCompany())))
@@ -47,7 +49,8 @@ public class SortCSV {
         compList = compList.stream().sorted().collect(Collectors.toList());
         return compList;
     }
-
+//========================================================================
+    //remove null instances
     public List<UserObjects> cleanList(List<UserObjects> OBJList) {
         OBJList.removeIf(Objects::isNull);
         return OBJList;
