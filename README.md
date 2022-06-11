@@ -1,14 +1,16 @@
 # Availity_Backend
 Availity Project in accordance to the project specifications. Added a GUI for ease of use.
-Main funtion located in MainProg
+Main funtion located in MainProg.
 
-LISP balancer: Availity_Backend -> src -> main -> java -> Checker -> LISPBalancer.java
+LISP balancer: 
+<p>Availity_Backend -> src -> main -> java -> Checker -> LISPBalancer.java</p>
 
-CSV project: Availity_Backend -> src -> main -> java ->     CSVReadWrite -> ReadingCSV.java, SortCSV.java, Writing.java
-
-                                                     ->     Objects -> UserObjects.java
-                                                     
-                                                     ->     NewCSV
+-CSV project: 
+Availity_Backend -> src -> main -> java ->
+CSVReadWrite 
+<p >==> ReadingCSV.java, SortCSV.java, Writing.java.</p>
+<p>==>     Objects -> UserObjects.java</p>           
+<p>==>     NewCSV</p>
 
 
 
