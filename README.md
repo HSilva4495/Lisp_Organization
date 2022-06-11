@@ -5,12 +5,12 @@ Main funtion located in MainProg.
 LISP balancer: 
 <p>Availity_Backend -> src -> main -> java -> Checker -> LISPBalancer.java</p>
 
--CSV project: 
-Availity_Backend -> src -> main -> java ->
+CSV project: 
+<p>Availity_Backend -> src -> main -> java ->
 CSVReadWrite 
 <p >==> ReadingCSV.java, SortCSV.java, Writing.java.</p>
 <p>==>     Objects -> UserObjects.java</p>           
 <p>==>     NewCSV</p>
-
+</p>
 
 
