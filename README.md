@@ -2,6 +2,7 @@
 Main funtion located in MainProg.
 
 LISP balancer: 
+This program periodically checks for parenthesis on the LISP code to see if they are valid to compile.
 <p>Lisp_Organization -> src -> main -> java -> Checker -> LISPBalancer.java</p>
 <p>Examples are provided on LISPEXP. For now the UI is copy and paste any Lisp function.</p>
 
