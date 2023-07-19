@@ -1,5 +1,4 @@
-# Availity_Backend
-Availity Project in accordance to the project specifications. Added a GUI for ease of use.
+# LispAnalysis backend
 Main funtion located in MainProg.
 
 LISP balancer: 
@@ -8,7 +7,7 @@ LISP balancer:
 
 <p></p>
 CSV project: 
-<p>Availity_Backend -> src -> main -> java ->
+<p>Lisp_Organization -> src -> main -> java ->
 CSVReadWrite 
 <p >==> ReadingCSV.java, SortCSV.java, Writing.java.</p>
 <p>==>     Objects -> UserObjects.java</p>           
