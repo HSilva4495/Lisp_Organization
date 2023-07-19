@@ -2,7 +2,7 @@
 Main funtion located in MainProg.
 
 LISP balancer: 
-<p>Availity_Backend -> src -> main -> java -> Checker -> LISPBalancer.java</p>
+<p>Lisp_Organization -> src -> main -> java -> Checker -> LISPBalancer.java</p>
 <p>Examples are provided on LISPEXP. For now the UI is copy and paste any Lisp function.</p>
 
 <p></p>
